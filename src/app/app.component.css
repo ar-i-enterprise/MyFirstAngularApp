@@ -1,0 +1,22 @@
+h1 {
+  color: rebeccapurple;
+  background: yellow;
+}
+
+h2 {
+  color: peru;
+  border: 8px purple;
+  background: black;
+}
+
+.white {
+  border: 2px solid rgb(227, 230, 53);
+  background-color: rgb(99, 255, 8);
+  color: black;
+}
+
+.black {
+  border: 2px solid rgb(227, 230, 53);
+  background-color: rgb(228, 17, 17);
+  color: white;
+}
