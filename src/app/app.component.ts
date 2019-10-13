@@ -12,7 +12,8 @@ export class AppComponent {
   title2 = "Assigment 3";
   Name = [];
   CurrentName = "";
-  Surname = "";
+  Surname = [];
+  CurrentSurname = "";
   Age = "";
   Reg = false;
   Status = "no";
@@ -35,16 +36,19 @@ export class AppComponent {
   register() {
     this.Reg = true;
     this.Name.push(this.CurrentName);
+    this.CurrentName = "";
+    this.Surname.push(this.CurrentSurname);
+    this.CurrentSurname = "";
   }
   reset() {
     this.Name = [];
-    this.Surname = "";
+    this.Surname = [];
     this.Age = "";
     this.Reg = false;
   }
 
   checkName() {
-    if ((this.Name == [], this.Surname == "", this.Age == "")) {
+    if ((this.Name == [], this.Surname == [], this.Age == "")) {
       return true;
     }
   }

@@ -3,31 +3,32 @@
   <h2>Register your Information here:</h2>
   <label for="Name"> Name :</label>
   <input type="text" placeholder="Name" [(ngModel)]="CurrentName" />
-  <label for="Surame"> Surname :</label>
+  <label for="Surname"> Surname :</label>
   <input type="text" placeholder="Surname" [(ngModel)]="Surname" />
   <label for="Age"> Age :</label>
   <input type="text" placeholder="Age" [(ngModel)]="Age" />
   <button [disabled]="checkName()" (click)="register()">Register</button>
+</div>
+<div>
   <h2>Your Information :</h2>
+  <div *ngIf="Reg">
+    <p>Name : {{ Name }}</p>
+    <p>Surname : {{ Surname }}</p>
+    <p>Age : {{ Age }}</p>
+  </div>
 </div>
 
-<h2 *ngIf="Reg">
-  <p>Name : {{ Name }}</p>
-  <p>Surname : {{ Surname }}</p>
-  <p>Age : {{ Age }}</p>
+<div>
   <h2>List of Registered :</h2>
+  <li *ngFor="let names of Name">{{ names }}</li>
+  <button [disabled]="buttonState" (click)="reset()">Reset</button>
+</div>
 
-  <div>
-    <li *ngFor="let names of Name">{{ names }}</li>
-    <button [disabled]="buttonState" (click)="reset()">Reset</button>
-  </div>
-
-  <h1>Angular Assigment {{ title2 }}</h1>
-  <div [ngClass]="{ white: waveFlag() }">
-    <p *ngIf="flag; else elseblock">Flag is waving</p>
-    <ng-template #elseblock>
-      <p>Flag is not Waving</p>
-    </ng-template>
-  </div>
-  <button (click)="waveFlag()">Wave the Flag</button>
-</h2>
+<h1>Angular Assigment {{ title2 }}</h1>
+<div [ngClass]="{ white: waveFlag() }">
+  <p *ngIf="flag; else elseblock">Flag is waving</p>
+  <ng-template #elseblock>
+    <p>Flag is not Waving</p>
+  </ng-template>
+</div>
+<button (click)="waveFlag()">Wave the Flag</button>
